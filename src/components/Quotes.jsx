@@ -24,7 +24,7 @@ export default function Quotes() {
   return (
     <div className="p-6 border border-gray-500 flex items-center justify-center w-full">
       {errors && <h1 className="text-red-500">{errors}</h1>}
-      {loading (
+      {loading ? (
         <h1>Loading...</h1>
       ) : (
         <div className="flex flex-col items-center">
