@@ -1,21 +1,22 @@
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Calculator from './components/Calculator';
 import Quotes from './components/Quotes';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import Home from './components/Home';
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Home />
+    element: <Home />,
   },
   {
     path: "/calucator",
-    element: <Calculator />
+    element: <Calculator />,
   },
   {
     path: "quotes",
-    element: <Quotes />
-  }
-])
+    element: <Quotes />,
+  },
+]);
 
 export default function App() {
   return (
