@@ -9,7 +9,7 @@ const router = createBrowserRouter([
     element: <Home />,
   },
   {
-    path: "/calucator",
+    path: "/calculator",
     element: <Calculator />,
   },
   {
@@ -21,7 +21,7 @@ const router = createBrowserRouter([
 export default function App() {
   return (
     <div className="max-w-2xl container mx-auto flex flex-col mt-4 items-center min-h-screen">
-      <div>
+      <div className="w-full">
         <RouterProvider router={router} />
       </div>
     </div>

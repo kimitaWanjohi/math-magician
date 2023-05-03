@@ -5,6 +5,5 @@ export default function Home() {
         welcome to Math magician, Do some calculations and read some quotes!!!
       </p>
     </div>
-    
-  )
+  );
 }
