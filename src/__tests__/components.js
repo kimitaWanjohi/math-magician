@@ -1,4 +1,3 @@
-/* eslint-disable comma-dangle */
 import React from "react";
 import { render, screen } from "@testing-library/react";
 import { BrowserRouter as Router } from "react-router-dom";
@@ -16,11 +15,7 @@ describe("Calculator component", () => {
 
 describe("Navbar component", () => {
   test("renders without errors", () => {
-    render(
-      <Router>
-        <Navbar />
-      </Router>
-    );
+    render(<Router><Navbar /></Router>);
     expect(screen.getByText("Math Magician")).toBeInTheDocument();
   });
 });
@@ -35,10 +30,6 @@ describe("Quotes component", () => {
 describe("Home component", () => {
   test("renders without errors", () => {
     render(<Home />);
-    expect(
-      screen.getByText(
-        "welcome to Math magician, Do some calculations and read some quotes!!!"
-      )
-    ).toBeInTheDocument();
+    expect(screen.getByText("welcome to Math magician, Do some calculations and read some quotes!!!")).toBeInTheDocument();
   });
 });
