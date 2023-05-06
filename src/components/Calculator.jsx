@@ -18,156 +18,40 @@ export default function Calculator() {
       total: e.target.value,
     });
   };
-
+  const buttons = [
+    ["AC", "+/-", "%", "÷"],
+    ["7", "8", "9", "x"],
+    ["4", "5", "6", "-"],
+    ["1", "2", "3", "+"],
+    ["0", ".", "="],
+  ];
   return (
     <div className="flex flex-col items-center justify-center gap-1  w-full border border-gray-400">
       <div className="w-full bg-gray-200 p-8">
-        <h4 className="text-end text-3xl" onChange={handleTextChange}>
+        <h4
+          className="text-end text-3xl"
+          id="result"
+          onChange={handleTextChange}
+        >
           {state.total || state.next || 0}
         </h4>
       </div>
-      <div className="flex w-full justify-between gap-1">
-        <button
-          type="button"
-          onClick={handleClick}
-          className="w-1/4 h-16 shadow-md border-gray-900 bg-gray-400"
-        >
-          AC
-        </button>
-        <button
-          type="button"
-          onClick={handleClick}
-          className="w-1/4 h-16 shadow-md border-gray-900 bg-gray-400"
-        >
-          +/-
-        </button>
-        <button
-          type="button"
-          onClick={handleClick}
-          className="w-1/4 h-16 shadow-md border-gray-900 bg-gray-400"
-        >
-          %
-        </button>
-        <button
-          type="button"
-          onClick={handleClick}
-          className="w-1/4 h-16 shadow-md border-gray-900 bg-yellow-500"
-        >
-          ÷
-        </button>
-      </div>
-      <div className="flex w-full justify-between gap-1">
-        <button
-          type="button"
-          onClick={handleClick}
-          className="w-1/4 h-16 shadow-md border-gray-900 bg-gray-200"
-        >
-          7
-        </button>
-        <button
-          type="button"
-          onClick={handleClick}
-          className="w-1/4 h-16 shadow-md border-gray-900 bg-gray-200"
-        >
-          8
-        </button>
-        <button
-          type="button"
-          onClick={handleClick}
-          className="w-1/4 h-16 shadow-md border-gray-900 bg-gray-200"
-        >
-          9
-        </button>
-        <button
-          type="button"
-          onClick={handleClick}
-          className="w-1/4 h-16 shadow-md border-gray-900 bg-yellow-500"
-        >
-          x
-        </button>
-      </div>
-      <div className="flex w-full justify-between gap-1">
-        <button
-          type="button"
-          onClick={handleClick}
-          className="w-1/4 h-16 shadow-md border-gray-900 bg-gray-200"
-        >
-          4
-        </button>
-        <button
-          type="button"
-          onClick={handleClick}
-          className="w-1/4 h-16 shadow-md border-gray-900 bg-gray-200"
-        >
-          5
-        </button>
-        <button
-          type="button"
-          onClick={handleClick}
-          className="w-1/4 h-16 shadow-md border-gray-900 bg-gray-200"
-        >
-          6
-        </button>
-        <button
-          type="button"
-          onClick={handleClick}
-          className="w-1/4 h-16 shadow-md border-gray-900 bg-yellow-500"
-        >
-          -
-        </button>
-      </div>
-      <div className="flex w-full justify-between gap-1">
-        <button
-          type="button"
-          onClick={handleClick}
-          className="w-1/4 h-16 shadow-md border-gray-900 bg-gray-200"
-        >
-          1
-        </button>
-        <button
-          type="button"
-          onClick={handleClick}
-          className="w-1/4 h-16 shadow-md border-gray-900 bg-gray-200"
-        >
-          2
-        </button>
-        <button
-          type="button"
-          onClick={handleClick}
-          className="w-1/4 h-16 shadow-md border-gray-900 bg-gray-200"
-        >
-          3
-        </button>
-        <button
-          type="button"
-          onClick={handleClick}
-          className="w-1/4 h-16 shadow-md border-gray-900 bg-yellow-500"
-        >
-          +
-        </button>
-      </div>
-      <div className="flex w-full justify-between gap-1">
-        <button
-          type="button"
-          onClick={handleClick}
-          className="w-1/2 h-16 shadow-md border-gray-900 bg-gray-200"
-        >
-          0
-        </button>
-        <button
-          type="button"
-          onClick={handleClick}
-          className="w-1/4 h-16 shadow-md border-gray-900 bg-gray-200"
-        >
-          .
-        </button>
-        <button
-          type="button"
-          onClick={handleClick}
-          className="w-1/4 h-16 shadow-md border-gray-900 bg-yellow-500"
-        >
-          =
-        </button>
+      <div className="flex w-full flex-col justify-between gap-1">
+        {buttons.map((row) => (
+          <div key={Math.random()} className="flex w-full gap-1">
+            {row.map((button) => (
+              <button
+                key={button}
+                type="button"
+                id={button}
+                className="w-full h-16 bg-gray-400 text-2xl"
+                onClick={handleClick}
+              >
+                {button}
+              </button>
+            ))}
+          </div>
+        ))}
       </div>
     </div>
   );

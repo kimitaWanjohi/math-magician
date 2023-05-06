@@ -23,6 +23,7 @@ export default function Quotes() {
 
   return (
     <div className="p-6 border border-gray-500 flex items-center justify-center w-full">
+      <h1 className="text-2xl font-bold">Quote of the day</h1>
       {errors && <h1 className="text-red-500">{errors}</h1>}
       {loading ? (
         <h1>Loading...</h1>
