@@ -44,7 +44,6 @@ describe("Home component", () => {
   });
 });
 
-
 describe('Calculation', () => {
   test("User Events test", async () => {
     const getById = queryByAttribute.bind(null, 'id');
